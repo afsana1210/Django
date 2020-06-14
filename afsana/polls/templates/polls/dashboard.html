@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+
+    <title>{% block title_content %}replace the value{% endblock %}</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#"
+              >Home <span class="sr-only">(current)</span></a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="navbarDropdown"
+              role="button"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              Dropdown
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link disabled"
+              href="#"
+              tabindex="-1"
+              aria-disabled="true"
+              >Disabled</a
+            >
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input
+            class="form-control mr-sm-2"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+          />
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit"  href="{%url 'signin' %}">
+            Login
+          </button>
+        </form>
+      </div>
+    </nav>
+    <div class="container-fluid">
+      <div class="row flex-xl-nowrap">
+        <div class="col-md-3 col-xl-2 bd-sidebar">
+          <form role="search" class="bd-search d-flex align-items-center">
+            <span
+              class="algolia-autocomplete"
+              style="position: relative; display: inline-block; direction: ltr;"
+              ><input
+                type="search"
+                class="form-control ds-input"
+                id="search-input"
+                placeholder="Search..."
+                aria-label="Search for..."
+                autocomplete="off"
+                data-docs-version="4.5"
+                spellcheck="false"
+                role="combobox"
+                aria-autocomplete="list"
+                aria-expanded="false"
+                aria-owns="algolia-autocomplete-listbox-0"
+                dir="auto"
+                style="position: relative; vertical-align: top;" />
+              <pre
+                aria-hidden="true"
+                style="
+                  position: absolute;
+                  visibility: hidden;
+                  white-space: pre;
+                  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI',
+                    Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif,
+                    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+                    'Noto Color Emoji';
+                  font-size: 16px;
+                  font-style: normal;
+                  font-variant: normal;
+                  font-weight: 400;
+                  word-spacing: 0px;
+                  letter-spacing: normal;
+                  text-indent: 0px;
+                  text-rendering: auto;
+                  text-transform: none;
+                "
+              ></pre>
+              <span
+                class="ds-dropdown-menu"
+                role="listbox"
+                id="algolia-autocomplete-listbox-0"
+                style="
+                  position: absolute;
+                  top: 100%;
+                  z-index: 100;
+                  display: none;
+                  left: 0px;
+                  right: auto;
+                "
+                ><div class="ds-dataset-1"></div></span
+            ></span>
+          </form>
+          <nav
+            class="collapse bd-links"
+            id="bd-docs-nav"
+            aria-label="Main navigation"
+          >
+            <div class="bd-toc-item">
+              <a class="bd-toc-link" href="#">
+                Getting started
+              </a>
+            </div>
+            <div class="bd-toc-item active">
+              <a class="bd-toc-link" href="#">
+                Layout
+              </a>
+
+              <ul class="nav bd-sidenav">
+                <li class="active bd-sidenav-active">
+                  <a href="#">
+                    Overview
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    Grid
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    Utilities for layout
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="bd-toc-item">
+              <a class="bd-toc-link" href="#">
+                Content
+              </a>
+
+              <ul class="nav bd-sidenav">
+                <li>
+                  <a href="#">
+                    Reboot
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    Typography
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    Code
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    Images
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    Tables
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    Figures
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="bd-toc-item">
+              <a class="bd-toc-link" href="#">
+                Components
+              </a>
+
+              <ul class="nav bd-sidenav">
+                <li>
+                  <a href="#">
+                    Alerts
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    Badge
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    Breadcrumb
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    Buttons
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    Button group
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    Card
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    Carousel
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    Collapse
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    Dropdowns
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    Forms
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    Input group
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    Jumbotron
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    List group
+                  </a>
+                </li>
+            </div>
+            <div class="bd-toc-item">
+              <a class="bd-toc-link" href="#">
+                Utilities
+              </a>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </div>
+    <main
+      class="col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content"
+      role="main"
+    ></main>
+  </body>
+</html>

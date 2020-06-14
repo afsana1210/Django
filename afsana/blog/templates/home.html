@@ -1,0 +1,6 @@
+{% extends "hello_world.html" %} {% block content %} {{title}} {{request.user}}
+{{request.path}} {{user}} {{user.is_authenticated}} {%if user.is_authenticated%}
+<h1>
+  users only data
+</h1>
+{% for a in my_list %} {{a}} {% endfor%} {% endif%} {%endblock %}
