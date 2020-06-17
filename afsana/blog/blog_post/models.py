@@ -4,8 +4,10 @@ from django.db import models
 class BlogPost(models.Model):
     title=models.TextField()
     content=models.TextField(null=True,blank=True)
+    
 
 
 class Blog:
     title="hello"
     content="something.."
+    text="new changes"
