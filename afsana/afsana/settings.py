@@ -78,13 +78,13 @@ WSGI_APPLICATION = 'afsana.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'afsana',
         'USER': 'postgres',
         'PASSWORD': 'postgres',
-        'HOST': '',
+        'HOST': 'localhost',
         'PORT': '5432',
-        #'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+       # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
