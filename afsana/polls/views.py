@@ -5,6 +5,7 @@ import datetime
 from django.http import HttpResponse
 from django.template import loader
 from .models import signup
+from django.http import Http404
 
 
 def index(request):
@@ -23,11 +24,22 @@ def util(request):
 def dashboard(request):
     return render(request,'polls/dashboard.html')
 
-def signup(request,slug):
-    obj=signup.objects.filter(slug=slug)
-    template_name="signup_get.html"
-    context={"object":obj}
-    return render(request,template_name,context)
+
+def signup(request):
+    if request.method=='POST':
+      first_name=request.POST.get('first_name')
+      Second_Name=request.POST.get('last_name')
+      Email=request.POST.get('email_id')
+      Password=request.POST.get('password')
+
+      var_signup=signup(first_name=first_name,second_name=Second_Name,email=Email,password=Password)
+      var_signup.save
+    # obj=signup.objects.filter(slug=slug)
+    # template_name="signup_get.html"
+    # context={"object":obj}
+    # return render(request,template_name,context)
+      return render(request,'polls/signin.html')
+    return render(request,'polls/index.html')
 
 
 

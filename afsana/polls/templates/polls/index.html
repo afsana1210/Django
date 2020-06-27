@@ -1,70 +1,88 @@
 {% extends "polls/base.html" %} {% block title_content %}signup{% endblock %}
 {%block content %}
-<div class="text-center">
+<div class="form-group">
 <form class="form-signin" action="{% url 'signin'%}" method="post">
   {% csrf_token %}
   <h1 class="h3 mb-3 font-weight-normal">Please sign up</h1>
-  <div class="dropdown">
-    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      Dropdown button
-    </button>
-    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-      <a class="dropdown-item" href="#">Consumer</a>
-      <a class="dropdown-item" href="#">Provider</a>
-
+ <div class="form-group">
+    <div class="row"> 
+      <div class="col-8 mx-auto">
+         <div class="dropdown">
+           <button class="btn btn-secondary btn-lg" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="width:100%">
+              Dropdown button
+           </button>
+           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+             <a class="dropdown-item" href="#">Consumer</a>
+             <a class="dropdown-item" href="#">Provider</a>
+            </div>
+          </div>
+      </div>
     </div>
+ </div>
+  <div class="form-group">
+    <label for="inputEmail" class="sr-only">First Name</label>
+    <input
+      type="text"
+      id="inputEmail"
+      class="form-control"
+      name="first_name"
+      placeholder="First Name"
+      required=""
+      autofocus=""
+      pattern="[A-Za-z]{6}"
+    />
   </div>
-  <label for="inputEmail" class="sr-only">First Name</label>
-  <input
-    type="text"
-    id="inputEmail"
-    class="form-control"
-    name="first_name"
-    placeholder="First Name"
-    required=""
-    autofocus=""
-    pattern="[A-Za-z]{3}"
-  />
-  <label for="inputEmail" class="sr-only">Last Name</label>
-  <input
-    type="text"
-    id="inputEmail"
-    class="form-control"
-    name="last_name"
-    placeholder="Last Name"
-    required=""
-    autofocus=""
-    pattern="[A-Za-z]"
-  />
-  <label for="inputEmail" class="sr-only">Email address</label>
-  <input
-    type="email"
-    id="inputEmail"
-    class="form-control"
-    name="email_id"
-    placeholder="Email address"
-    required=""
-    autofocus=""
-  />
-  <label for="inputPassword" class="sr-only">Password</label>
-  <input
-    type="password"
-    id="inputPassword"
-    class="form-control"
-    name="password"
-    placeholder="Password"
-    required=""
-  />
-  <button class="btn btn-lg btn-primary btn-block" type="submit">
-    Sign Up
-  </button>
-  <p class="mt-5 mb-3 text-muted">
-    ©
-    <intent>
-      <% import datetime %> <% e = datetime.datetime.now() %> <%
-      x,y=e.year,e.year+1 %> <% print("{}-{}".format(x,y)) %>
-    </intent>
-  </p>
+  <div class="form-group">
+    <label for="inputEmail" class="sr-only">Last Name</label>
+    <input
+      type="text"
+      id="inputEmail"
+      class="form-control"
+      name="last_name"
+      placeholder="Last Name"
+      required=""
+      autofocus=""
+      pattern="[A-Za-z]{6}"
+    />
+  </div>
+  <div class="form-group">
+    <label for="inputEmail" class="sr-only">Email address</label>
+    <input
+      type="email"
+      id="inputEmail"
+      class="form-control"
+      name="email_id"
+      placeholder="Email address"
+      required=""
+      autofocus=""
+    />
+  </div>
+  <div class="form-group">
+    <label for="inputPassword" class="sr-only">Password</label>
+    <input
+      type="password"
+      id="inputPassword"
+      class="form-control"
+      name="password"
+      placeholder="Password"
+      required=""
+    />
+  </div>
+  <div class="form-group">
+    <button class="btn btn-lg btn-primary btn-block" type="submit">
+      Sign Up
+    </button>
+    <p class="mt-5 mb-3 text-muted">
+      ©
+      <intent>
+        <% import datetime %> <% e = datetime.datetime.now() %> <%
+        x,y=e.year,e.year+1 %> <% print("{}-{}".format(x,y)) %>
+      </intent>
+    </p>
+  </div>
+
+
+</div>
 </form>
 </div>
 {% endblock %}
