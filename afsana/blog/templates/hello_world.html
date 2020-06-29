@@ -19,10 +19,11 @@
     <title>{% block title_content %}replace the value{% endblock %}</title>
   </head>
   <body>
-    <div class="container">
+    <div class="container}">
       <div class="row">
         <div class="col-6 mx-auto">
           <h1>{{title}}</h1>
+          {% block content%} replace value {% endblock %}
         </div>
       </div>
     </div>

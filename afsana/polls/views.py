@@ -25,15 +25,15 @@ def dashboard(request):
     return render(request,'polls/dashboard.html')
 
 
-def signup(request):
+def signup_view(request):
     if request.method=='POST':
       first_name=request.POST.get('first_name')
-      Second_Name=request.POST.get('last_name')
-      Email=request.POST.get('email_id')
-      Password=request.POST.get('password')
+      last_name=request.POST.get('second_name')
+      email_id=request.POST.get('email_id')
+      password=request.POST.get('password')
 
-      var_signup=signup(first_name=first_name,second_name=Second_Name,email=Email,password=Password)
-      var_signup.save
+      var_signup=signup(first_name=first_name,second_name=last_name,email=email_id,password=password)
+      var_signup.save()
     # obj=signup.objects.filter(slug=slug)
     # template_name="signup_get.html"
     # context={"object":obj}
@@ -43,12 +43,12 @@ def signup(request):
 
 
 
-def current_datetime(request):
-    now = datetime.datetime.now()
-    x,y=e.year,e.year+1
-    print("{}-{}".format(x,y))
-    html = "<html><body>%s.</body></html>" % now
-    return HttpResponse(html)
+# def current_datetime(request):
+#     now = datetime.datetime.now()
+#     x,y=e.year,e.year+1
+#     print("{}-{}".format(x,y))
+#     html = "<html><body>%s.</body></html>" % now
+#     return HttpResponse(html)
 
 
 def detail(request, question_id):

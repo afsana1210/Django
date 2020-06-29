@@ -1,11 +1,11 @@
 from django.urls import path
 from . import views
-from .views import  signup,signin
+from .views import  signup_view,signin
 
 urlpatterns=[
     path('',views.index,name='index'),
     path('dashboard/',views.dashboard,name='dashboard'),
-    path('signup/', views.signup, name='signup'),
+    path('signup/', views.signup_view, name='signup'),
     path('signin/', views.signin, name='signin'),
     # ex: /polls/5/results/
     path('<int:question_id>/results/', views.results, name='results'),

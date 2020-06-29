@@ -20,10 +20,11 @@ from blog_post.views import (
 )
 
 from .views import ( home_page,
- new_example
+ new_example,form_view
 )
 urlpatterns = [
     re_path(r'^homes?/$',home_page),
+    path('contact/',form_view),
     path('blog/',blog_post_details_page),
     path('new/',new_example),
     path('admin/', admin.site.urls),
