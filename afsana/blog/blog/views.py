@@ -1,7 +1,8 @@
 from django.http import  HttpResponse
 from django.shortcuts import render
 from django.template.loader import get_template
-from .forms import ContactForm
+# from .forms import ContactForm,BlogPostForm
+from blog_post.forms import BlogPostModelForm
 # def home_page(request):
 #     my_title="Hello there.."
 #     return render(request,"hello_world.html",{"title":my_title})
@@ -20,15 +21,16 @@ def home_page(request):
     context={"title":my_title,"my_list":[1,2,3]}
     return render(request,"home.html",context)
 
-def form_view(request):
-    my_title="Hello there.."
-    # print(request.POST)
-    form=ContactForm(request.POST or None)
-    if form.is_valid():
-     print(form.cleaned_data)
-    context={
-        "title":my_title,
-        "form":form
+# def form_view(request):
+#     my_title="Hello there.."
+#     # print(request.POST)
+#     form=ContactForm(request.POST or None)
+#     if form.is_valid():
+#      print(form.cleaned_data)
+#     context={
+#         "title":my_title,
+#         "form":form
 
-     }
-    return render(request,"form.html",context)
+#      }
+#     return render(request,"form.html",context)
+

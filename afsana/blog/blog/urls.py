@@ -16,16 +16,17 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,re_path
 from blog_post.views import (
-    blog_post_details_page
+    blog_post_details_page,blog_post_create_view
 )
 
 from .views import ( home_page,
- new_example,form_view
+ new_example,
 )
 urlpatterns = [
     re_path(r'^homes?/$',home_page),
-    path('contact/',form_view),
-    path('blog/',blog_post_details_page),
+    # path('contact/',form_view),
+    path('blog_create/',blog_post_create_view),
+    # path('blog/',blog_post_details_page),
     path('new/',new_example),
     path('admin/', admin.site.urls),
 ]
