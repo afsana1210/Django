@@ -7,15 +7,16 @@
  <div class="form-group">
     <div class="row"> 
       <div class="col-8 mx-auto">
-         <div class="dropdown">
-           <button class="btn btn-secondary btn-lg" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="width:100%">
-              Dropdown button
-           </button>
-           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-             <a class="dropdown-item" href="#">Consumer</a>
-             <a class="dropdown-item" href="#">Provider</a>
-            </div>
-          </div>
+        <div class="ui field">
+          <label>select consumer or user</label>
+          <!-- {{form.user}} -->
+          <select name="user" class="ui dropdown" id="select" {{form.user}}>
+              <option value="">select</option>
+              <option value="consumer">consumer</option>
+              <option value="provider">provider</option>
+
+          </select>
+      </div>
       </div>
     </div>
  </div>

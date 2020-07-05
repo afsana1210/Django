@@ -10,14 +10,19 @@ from django.utils import timezone
 
 
 class signup(models.Model):
+    user_choices=[('consumer','provider')]
+    user=models.CharField(max_length=240,choices=user_choices,null=True)
    # slug=models.TextField(default="this-is-new-slug")
-    first_name=models.CharField(max_length=50)
-    second_name=models.CharField(max_length=50)
-    email=models.EmailField(max_length=140,default='enter email')
-    password=models.CharField(max_length=50)
+    first_name=models.CharField(max_length=250)
+    second_name=models.CharField(max_length=250)
+    email=models.EmailField(max_length=140)
+    password=models.CharField(max_length=250)
+
+    def __str__(self):
+        return self.first_name
 
 class signin(models.Model):
-    email=models.EmailField(max_length=140,default='enter email')
+    email=models.EmailField(max_length=140)
     password=models.CharField(max_length=50)
 
 # from django.db import models

@@ -1,11 +1,23 @@
 
 
 from django import forms
+from .models import signup
 
-
-class signup(forms.Form):
+# class SignupModelForm(forms.ModelForm):
+#    class Meta:
+#        model=signup
+#        fields='__all__'
+#        widgets = {
+#             'title': forms.TextInput(
+# 				attrs={
+# 					'class': 'form-control'
+# 					}
+# 				),
+#         }
+# 
+class SignupModelForm(forms.ModelForm):
+        class Meta:
+            model = signup
+            fields = ('user','first_name', 'second_name', 'email','password')
+      
    
-    first_name=forms.CharField()
-    second_name=forms.CharField()
-    email=forms.EmailField()
-    password=forms.CharField()

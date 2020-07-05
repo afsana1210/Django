@@ -6,7 +6,8 @@
 <!-- {% if title %}
   <h1>{{title}}</h1>
 {% endif %} -->
-
+{% load crispy_forms_tags %}
+{% for field in form%}
 <div class="form-group">
     <form class="form-signin" action="{% url 'signin'%}" method="post">
       {% csrf_token %}
@@ -14,7 +15,8 @@
      <div class="form-group">
         <div class="row">
           <div class="col-8 mx-auto">
-            {{form.as_p}}
+            <!-- {{form|crispy}} -->
+            {{ field }}
           </div>
         </div>
      </div>

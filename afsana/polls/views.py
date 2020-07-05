@@ -1,12 +1,13 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 import datetime
+from django.contrib.auth.forms import AuthenticationForm 
 
 # Create your views here.
 from django.http import HttpResponse
 from django.template import loader
 from .models import signup
 
-from .forms import signup
+from .forms import SignupModelForm
 from django.http import Http404
 
 
@@ -29,32 +30,41 @@ def dashboard(request):
 def form_view(request):
     # my_title="Hello there.."
     # print(request.POST)
-    form=signup(request.POST or None)
-    if form.is_valid():
-     print(form.cleaned_data)
-    context={
-        # "title":my_title,
-        "form":form
+    if request.method=='POST':
+      form=SignupModelForm(request.POST or None)
+      if form.is_valid():
+          form.save()
+          email=form.cleaned_data.get('email')
+          password=form.cleaned_data.get('password')
+          print('email ,password')
+          return redirect(signin)
+    #  print(form.cleaned_data)
+    # context={
+    #     # "title":my_title,
+    #     "form":form
 
-     }
-    return render(request,"polls/index.html",context)
+    #  }
+    else: 
+        form = SignupModelForm()
+    return render(request,"polls/index.html",{'form':form})
 
 
-# def signup_view(request):
+def signup_view(request):
 #     if request.method=='POST':
-#     form=SignupModelForm(request.POST or None)
-#     if form.is_valid():
+    form=SignupModelForm(request.POST or None)
+    if form.is_valid():
 #       first_name=request.POST.get('first_name')
 #       last_name=request.POST.get('second_name')
 #       email_id=request.POST.get('email_id')
 #       password=request.POST.get('password')
 #       data=signup(first_name=first_name,second_name=last_name,email=email_id,password=password)
-#       data1= data.save()
-#       print(data1)
-#       form=SignupModelForm()
-#     template_name="index.html"
-#     context={"form":form}
-#     return render(request,template_name,context)
+      obj= form.save(commit=True)
+      print(obj)
+      obj.save()
+      form=SignupModelForm()
+    template_name="polls/forms.html"
+    context={"form":form}
+    return render(request,template_name,context)
 
 def signups(request):
     if request.method=="POST":
