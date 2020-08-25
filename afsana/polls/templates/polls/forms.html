@@ -14,18 +14,25 @@
       <h1 class="h3 mb-3 font-weight-normal">Please sign up</h1>
      <div class="form-group">
         <div class="row">
+          {% if form.email.errors %}
+                <ul>
+              {% for error in form.email.errors %}
+                  <li><strong>{{ error|escape }}</strong></li>
+              {% endfor %}
+               </ul>
+          {% endif %}
           <div class="col-8 mx-auto">
            {% for field in form %}
             <div class="form-group">
               <div class="row">
                 <div class="col-8 mx-auto">
-            <!-- {{form|crispy}} -->
+           
                  {{field}}
                 </div>
               </div>
             </div>
            {% endfor %}
-            <!-- {{ form.as_p }} -->
+            
           </div>
         </div>
      </div>

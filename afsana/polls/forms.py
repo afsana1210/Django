@@ -1,10 +1,10 @@
-
+from django.core import validators
 
 from django import forms
 from .models import signup
 
 class SignupModelForm(forms.ModelForm):
-   class Meta:
+   class Meta():
        model=signup
        fields=['user','first_name','second_name','email','password']
        widgets = {
@@ -35,9 +35,20 @@ class SignupModelForm(forms.ModelForm):
             ),
         }
 
+    #    def clean_email(self,*args,**kwargs):
+    #         # cleaned_data=super.clean()
+    #         # print(cleaned_data)
+    #         email=self.cleaned_data.get('email')
+    #         print(email)
+    #         qs=signup.objects.filter(email=email)
+    #         if qs.exists():
+    #             raise forms.ValidationError("this email has already been used please try again")
+    #         return email
+
 # class SignupModelForm(forms.ModelForm):
 #         class Meta:
 #             model = signup
 #             fields = ('user','first_name', 'second_name', 'email','password')
       
-   
+
+           

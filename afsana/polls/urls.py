@@ -12,6 +12,7 @@ urlpatterns=[
     path('signup_page_view/<int:id>',views.signup_page_view,name="signup_page_view"),
     path('signup/', views.signups, name='signups'),
     path('signin/', views.signin, name='signin'),
+    path('signin_view/',views.signin_view,name='signin_view'),
     # ex: /polls/5/results/
     path('<int:question_id>/results/', views.results, name='results'),
     # ex: /polls/5/vote/

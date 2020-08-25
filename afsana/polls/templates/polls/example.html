@@ -1,4 +1,6 @@
 {% extends "polls/base.html"%}
 {% block content%}
-<h1>{{obj.first_name}}</h1>
+{% for object in objects_list%}
+<h1>{{object}}</h1>
+{% endfor %}
 {% endblock%}
